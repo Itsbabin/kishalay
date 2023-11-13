@@ -1,0 +1,19 @@
+{
+  "name": "kishalay",
+  "version": "1.0.0",
+  "description": "to do",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Itsbabin/kishalay.git"
+  },
+  "author": "biswajit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Itsbabin/kishalay/issues"
+  },
+  "homepage": "https://github.com/Itsbabin/kishalay#readme"
+}
