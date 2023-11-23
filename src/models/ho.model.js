@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt"
 const { Schema } = mongoose;
 
 const hoSchema = new Schema({
@@ -22,5 +23,11 @@ const hoSchema = new Schema({
         trim: true,
     }
 },{timestamps: true})
+
+hoSchema.pre("save",async function (next){
+     this.password = await bcrypt.hash(this.password,10);
+     next();
+})
+
 
 export const HO = mongoose.model("HO",hoSchema);

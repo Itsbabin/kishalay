@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt"
 const {Schema} = mongoose;
 
 const managerSchema = new Schema({
@@ -26,5 +27,10 @@ const managerSchema = new Schema({
         ref: "Bank"
     }]
 },{timestamps: true})
+
+managerSchema.pre("save",async function (next){
+    this.password = await bcrypt.hash(this.password,10);
+    next();
+})
 
 export const Manager = mongoose.model("Manager",managerSchema);
